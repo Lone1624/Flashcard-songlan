@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif SC", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-light: #f2f8f5;
+  --color-brand-medium: #dcf2e6;
+  --color-brand-dark: #2d3a35;
+  --color-brand-accent: #6ebf91;
+}
+
+:root {
+  --app-bg: #f2f8f5;
+  --app-text: #2d3a35;
+  --card-shadow: 0 10px 30px -10px rgba(110, 191, 145, 0.25);
+  --scrollbar-thumb: #cbd5e1;
+}
+
+html.dark {
+  --app-bg: #0b120f; /* Deep dark forest green */
+  --app-text: #ecf3ef;
+  --card-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.65);
+  --scrollbar-thumb: #23372c;
+}
+
+/* Base custom styles to enhance visual appeal matching High Density */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom card shadow with High Density mint glow tint */
+.card-shadow {
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Custom scrollbars for a clean look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 3D Flip Card Container styles */
+.perspective-1000 {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+/* Markdown rendering styles for flashcards */
+.markdown-body p {
+  margin: 0;
+}
+.markdown-body p + p {
+  margin-top: 0.5em;
+}
+.markdown-body strong {
+  font-weight: 700;
+}
+.markdown-body em {
+  font-style: italic;
+}
+.markdown-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: rgba(110, 191, 145, 0.1);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+.markdown-body ul, .markdown-body ol {
+  padding-left: 1.2em;
+  margin: 0.3em 0;
+}
+.markdown-body li {
+  margin: 0.15em 0;
+}
+.markdown-body .katex {
+  font-size: 1em;
+}
+

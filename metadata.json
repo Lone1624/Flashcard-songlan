@@ -1,0 +1,6 @@
+{
+  "name": "菘蓝的抽认卡",
+  "description": "极简、美观的纯前端抽认卡工具，配备 3D 卡片翻转动画，支持自定义套牌与学习进度追踪。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
