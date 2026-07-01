@@ -208,21 +208,21 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
         initial={{ scale: 0.95, y: 15 }}
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.95, y: 15 }}
-        className="bg-white rounded-3xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-xl overflow-hidden border border-slate-100"
+        className="bg-white dark:bg-[#0d1b13] rounded-3xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-xl overflow-hidden border border-slate-100 dark:border-emerald-900/30"
       >
         {/* Modal Header */}
-        <div className="flex justify-between items-center px-6 py-4 bg-emerald-50/50 border-b border-slate-100 shrink-0">
+        <div className="flex justify-between items-center px-6 py-4 bg-emerald-50/50 dark:bg-[#0a1410] border-b border-slate-100 dark:border-emerald-900/30 shrink-0">
           <div className="flex items-center gap-2">
             <span className="p-1.5 bg-emerald-500 rounded-lg text-white">
               <Layers size={16} />
             </span>
-            <h2 className="text-base font-bold text-slate-800">
+            <h2 className="text-base font-bold text-slate-800 dark:text-slate-100">
               {existingDeck ? '✏️ 编辑套牌' : '✨ 新建抽认卡套牌'}
             </h2>
           </div>
           <button
             onClick={onClose}
-            className="p-1 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+            className="p-1 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-emerald-900/30 rounded-lg transition-colors cursor-pointer"
           >
             <X size={18} />
           </button>
@@ -232,7 +232,7 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
         <form onSubmit={handleSaveDeck} className="flex-1 overflow-y-auto p-6 space-y-6">
           
           {validationError && !validationError.includes('未能解析') && (
-            <div className="p-3 bg-rose-50 border border-rose-100 rounded-xl text-rose-700 text-xs font-semibold flex items-center gap-2 animate-pulse">
+            <div className="p-3 bg-rose-50 dark:bg-rose-950/30 border border-rose-100 dark:border-rose-900/30 rounded-xl text-rose-700 dark:text-rose-300 text-xs font-semibold flex items-center gap-2 animate-pulse">
               <AlertCircle size={15} className="shrink-0" />
               <span>{validationError}</span>
             </div>
@@ -241,7 +241,7 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
           {/* Basic Deck Meta Info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-600 block">套牌名称 *</label>
+              <label className="text-xs font-bold text-slate-600 dark:text-slate-400 block">套牌名称 *</label>
               <input
                 type="text"
                 value={title}
@@ -251,12 +251,12 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
                 }}
                 maxLength={40}
                 placeholder="例如：日语词汇、语法核心..."
-                className="w-full px-4 py-2 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 rounded-xl text-sm transition-all bg-slate-50/30"
+                className="w-full px-4 py-2 border border-slate-200 dark:border-emerald-900/40 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 rounded-xl text-sm transition-all bg-slate-50/30 dark:bg-[#0a1410] dark:text-slate-200 dark:placeholder-slate-500"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-slate-600 block">选择套牌类别 *</label>
+              <label className="text-xs font-bold text-slate-600 dark:text-slate-400 block">选择套牌类别 *</label>
               <div className="flex flex-wrap gap-1.5">
                 {PRESET_CATEGORIES.map(cat => (
                   <button
@@ -265,8 +265,8 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
                     onClick={() => setCategory(cat)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer border ${
                       category === cat
-                        ? 'bg-emerald-50 border-emerald-300 text-emerald-800'
-                        : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50'
+                        ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800/60 text-emerald-800 dark:text-emerald-300'
+                        : 'bg-white dark:bg-[#0d1b13] border-slate-200 dark:border-emerald-900/40 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-[#183125]'
                     }`}
                   >
                     {cat}
@@ -276,7 +276,7 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
             </div>
 
             <div className="md:col-span-2 space-y-1.5">
-              <label className="text-xs font-bold text-slate-600 block">描述套牌内容 *</label>
+              <label className="text-xs font-bold text-slate-600 dark:text-slate-400 block">描述套牌内容 *</label>
               <input
                 type="text"
                 value={description}
@@ -286,7 +286,7 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
                 }}
                 maxLength={100}
                 placeholder="简要描述本套牌的内容。"
-                className="w-full px-4 py-2 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 rounded-xl text-sm transition-all bg-slate-50/30"
+                className="w-full px-4 py-2 border border-slate-200 dark:border-emerald-900/40 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 rounded-xl text-sm transition-all bg-slate-50/30 dark:bg-[#0a1410] dark:text-slate-200 dark:placeholder-slate-500"
               />
             </div>
           </div>
@@ -294,13 +294,13 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
           {/* Manage Cards Title & Add button */}
           <div className="pt-4 border-t border-slate-100">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-sm font-black text-slate-700 flex items-center gap-1.5">
+              <h3 className="text-sm font-black text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
                 🗂️ 卡片列表 (共 {cards.length} 张)
               </h3>
               <button
                 type="button"
                 onClick={handleAddCardInput}
-                className="flex items-center gap-1 px-3 py-1.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-lg text-xs font-bold transition-colors cursor-pointer"
+                className="flex items-center gap-1 px-3 py-1.5 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 rounded-lg text-xs font-bold transition-colors cursor-pointer"
               >
                 <Plus size={14} /> 添加新卡片
               </button>
@@ -311,16 +311,16 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
               {cards.map((card, index) => (
                 <div 
                   key={index} 
-                  className="bg-slate-50/50 border border-slate-200/60 rounded-2xl p-4 relative space-y-3 group"
+                  className="bg-slate-50/50 dark:bg-[#0a1410] border border-slate-200/60 dark:border-emerald-900/30 rounded-2xl p-4 relative space-y-3 group"
                 >
                   <div className="flex justify-between items-center">
-                    <span className="text-xs font-mono font-black text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-md">
+                    <span className="text-xs font-mono font-black text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-[#0d1b13] px-2.5 py-0.5 rounded-md">
                       CARD #{index + 1}
                     </span>
                     <button
                       type="button"
                       onClick={() => handleRemoveCardInput(index)}
-                      className="text-slate-400 hover:text-rose-500 hover:bg-rose-50 p-1 rounded-md transition-colors cursor-pointer"
+                      className="text-slate-400 dark:text-slate-500 hover:text-rose-500 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 p-1 rounded-md transition-colors cursor-pointer"
                       title="移除此卡片"
                     >
                       <Trash2 size={14} />
@@ -329,40 +329,40 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500">问题 *</label>
+                      <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400">问题 *</label>
                       <textarea
                         rows={2}
                         value={card.question}
                         onChange={e => handleCardFieldChange(index, 'question', e.target.value)}
                         placeholder="输入问题或词汇..."
-                        className="w-full px-3 py-1.5 border border-slate-200 focus:border-emerald-500 rounded-xl text-xs bg-white resize-none"
+                        className="w-full px-3 py-1.5 border border-slate-200 dark:border-emerald-900/40 focus:border-emerald-500 rounded-xl text-xs bg-white dark:bg-[#0d1b13] dark:text-slate-200 dark:placeholder-slate-500 resize-none"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500">答案 *</label>
+                      <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400">答案 *</label>
                       <textarea
                         rows={2}
                         value={card.answer}
                         onChange={e => handleCardFieldChange(index, 'answer', e.target.value)}
                         placeholder="输入对应解答或注释..."
-                        className="w-full px-3 py-1.5 border border-slate-200 focus:border-emerald-500 rounded-xl text-xs bg-white resize-none"
+                        className="w-full px-3 py-1.5 border border-slate-200 dark:border-emerald-900/40 focus:border-emerald-500 rounded-xl text-xs bg-white dark:bg-[#0d1b13] dark:text-slate-200 dark:placeholder-slate-500 resize-none"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500">提示 (选填)</label>
+                      <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400">提示 (选填)</label>
                       <input
                         type="text"
                         value={card.hint}
                         onChange={e => handleCardFieldChange(index, 'hint', e.target.value)}
                         placeholder="可选的关键线索"
-                        className="w-full px-3 py-1.5 border border-slate-200 focus:border-emerald-500 rounded-xl text-xs bg-white"
+                        className="w-full px-3 py-1.5 border border-slate-200 dark:border-emerald-900/40 focus:border-emerald-500 rounded-xl text-xs bg-white dark:bg-[#0d1b13] dark:text-slate-200 dark:placeholder-slate-500"
                       />
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-[11px] font-bold text-slate-500">难度评定</label>
+                      <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400">难度评定</label>
                       <div className="flex gap-2">
                         {['easy', 'medium', 'hard'].map((diff) => (
                           <button
@@ -372,11 +372,11 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
                             className={`flex-1 py-1 rounded-lg text-[10px] font-bold border transition-all cursor-pointer ${
                               card.difficulty === diff
                                 ? diff === 'easy'
-                                  ? 'bg-emerald-50 border-emerald-300 text-emerald-800'
+                                  ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800/60 text-emerald-800 dark:text-emerald-300'
                                   : diff === 'medium'
-                                  ? 'bg-amber-50 border-amber-300 text-amber-800'
-                                  : 'bg-rose-50 border-rose-300 text-rose-800'
-                                : 'bg-white border-slate-100 text-slate-400 hover:bg-slate-50'
+                                  ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-300 dark:border-amber-800/60 text-amber-800 dark:text-amber-300'
+                                  : 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800/60 text-rose-800 dark:text-rose-300'
+                                : 'bg-white dark:bg-[#0d1b13] border-slate-100 dark:border-emerald-900/40 text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-[#183125]'
                             }`}
                           >
                             {diff === 'easy' ? '简易' : diff === 'medium' ? '中等' : '困难'}
@@ -391,11 +391,11 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
           </div>
 
           {/* AI Helper Section */}
-          <div className="border-t border-emerald-100 pt-4">
+          <div className="border-t border-emerald-100 dark:border-emerald-900/30 pt-4">
             <button
               type="button"
               onClick={() => setShowAiHelper(!showAiHelper)}
-              className="flex items-center gap-2 text-xs font-bold text-emerald-700 hover:text-emerald-800 transition-colors"
+              className="flex items-center gap-2 text-xs font-bold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
             >
               <Sparkles size={14} className="text-emerald-500" />
               {showAiHelper ? '收起' : '用 AI 批量生成卡片'}
@@ -409,7 +409,7 @@ export const DeckManager: React.FC<DeckManagerProps> = ({
                 className="mt-3 space-y-3"
               >
                 {/* Prompt hint */}
-                <div className="bg-amber-50 border border-amber-100 rounded-xl p-3 text-xs text-amber-800 leading-relaxed">
+                <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/30 rounded-xl p-3 text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
                   <div className="flex items-center justify-between mb-1">
                     <strong>📋 将下面的内容复制给 AI：</strong>
                     <button
@@ -432,13 +432,13 @@ D: easy/medium/hard（可选）
 \`\`\``;
                         navigator.clipboard.writeText(text);
                       }}
-                      className="flex items-center gap-1 px-2 py-1 text-[10px] font-bold text-amber-700 hover:text-amber-900 bg-amber-100/60 hover:bg-amber-200/60 rounded-lg transition-colors cursor-pointer"
+                      className="flex items-center gap-1 px-2 py-1 text-[10px] font-bold text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-200 bg-amber-100/60 dark:bg-amber-900/40 hover:bg-amber-200/60 dark:hover:bg-amber-800/50 rounded-lg transition-colors cursor-pointer"
                     >
                       复制
                     </button>
                   </div>
                   <div className="relative">
-                    <code className="text-[11px] whitespace-pre-wrap bg-white/60 block p-2.5 rounded-lg border border-amber-200/50 leading-relaxed">
+                    <code className="text-[11px] whitespace-pre-wrap bg-white/60 dark:bg-[#0d1b13]/80 block p-2.5 rounded-lg border border-amber-200/50 dark:border-amber-800/40 leading-relaxed">
 {`请生成 10 张关于[主题]的抽认卡。
 要求：问题不超过 20 字，答案不超过 30 字。
 用代码块包含所有卡片，每张卡片用 --- 单独行隔开，格式如下：
@@ -465,7 +465,7 @@ D: easy/medium/hard（可选）
                   onChange={e => setAiOutput(e.target.value)}
                   placeholder="在此粘贴 AI 生成的内容..."
                   rows={6}
-                  className="w-full px-4 py-3 border border-emerald-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 rounded-xl text-xs bg-emerald-50/30 resize-none font-mono leading-relaxed"
+                  className="w-full px-4 py-3 border border-emerald-200 dark:border-emerald-900/40 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 rounded-xl text-xs bg-emerald-50/30 dark:bg-[#0a1410] dark:text-slate-200 dark:placeholder-slate-500 resize-none font-mono leading-relaxed"
                 />
 
                 {/* Parse button */}
@@ -482,7 +482,7 @@ D: easy/medium/hard（可选）
 
                 {/* AI parse error - shown at bottom for visibility */}
                 {validationError && validationError.includes('未能解析') && (
-                  <div className="p-2.5 bg-rose-50 border border-rose-100 rounded-xl text-rose-700 text-xs font-semibold flex items-center gap-2">
+                  <div className="p-2.5 bg-rose-50 dark:bg-rose-950/30 border border-rose-100 dark:border-rose-900/30 rounded-xl text-rose-700 dark:text-rose-300 text-xs font-semibold flex items-center gap-2">
                     <AlertCircle size={14} className="shrink-0" />
                     <span>{validationError}</span>
                   </div>
@@ -493,11 +493,11 @@ D: easy/medium/hard（可选）
         </form>
 
         {/* Modal Footer */}
-        <div className="flex justify-end gap-3 px-6 py-4 bg-slate-50 border-t border-slate-100 shrink-0">
+        <div className="flex justify-end gap-3 px-6 py-4 bg-slate-50 dark:bg-[#0a1410] border-t border-slate-100 dark:border-emerald-900/30 shrink-0">
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-xs font-bold text-slate-500 hover:text-slate-800 rounded-xl transition-colors cursor-pointer"
+            className="px-4 py-2 text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 rounded-xl transition-colors cursor-pointer"
           >
             取消
           </button>
