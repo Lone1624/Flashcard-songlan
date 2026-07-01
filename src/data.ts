@@ -5,7 +5,9 @@
 
 import { FlashcardSet, AllProgress, DeckProgress, Flashcard } from './types';
 // @ts-ignore - Vite raw import
-import csvRaw from '../public/Molecular1.csv?raw';
+import csvMolecular from '../public/Molecular1.csv?raw';
+// @ts-ignore - Vite raw import
+import csvCellBio from '../public/cellbiology.csv?raw';
 
 /**
  * Parse a CSV string into Flashcard array.
@@ -52,7 +54,8 @@ function parseCSVtoCards(csv: string): Flashcard[] {
     .filter(<T>(c: T | null): c is T => c !== null);
 }
 
-const molecularCards = parseCSVtoCards(csvRaw);
+const molecularCards = parseCSVtoCards(csvMolecular);
+const cellBioCards = parseCSVtoCards(csvCellBio);
 
 export const DEFAULT_DECKS: FlashcardSet[] = [
   {
@@ -62,6 +65,14 @@ export const DEFAULT_DECKS: FlashcardSet[] = [
     category: '生物技术',
     createdAt: '2026-07-01',
     cards: molecularCards
+  },
+  {
+    id: 'cell-biology',
+    title: '🔬 细胞生物学',
+    description: '细胞生物学研究方法、显微镜技术及超分辨成像等核心知识。',
+    category: '生物技术',
+    createdAt: '2026-07-01',
+    cards: cellBioCards
   }
 ];
 
