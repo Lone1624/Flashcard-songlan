@@ -227,7 +227,7 @@ export const ExamViewer: React.FC<ExamViewerProps> = ({ exam, onBack }) => {
       </div>
 
       {/* Question card + Navigation - fixed three-row layout */}
-      <div className="flex-1 grid grid-rows-[1fr_auto] gap-3 min-h-0">
+      <div className="flex-1 grid grid-rows-[1fr_auto] gap-3 min-h-0 relative">
         {/* Question card */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -325,12 +325,12 @@ export const ExamViewer: React.FC<ExamViewerProps> = ({ exam, onBack }) => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Explanation (shown after submit) - between card and nav */}
+        {/* Explanation (shown after submit) - floating over navigation, doesn't compress options */}
         {submitted && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`p-3 sm:p-4 rounded-xl border text-xs sm:text-sm leading-relaxed ${
+            className={`absolute bottom-full left-0 right-0 mb-2 p-3 sm:p-4 rounded-xl border text-xs sm:text-sm leading-relaxed z-10 ${
               isCorrect(currentQuestion)
                 ? 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-100 dark:border-emerald-900/30 text-emerald-800 dark:text-emerald-200'
                 : 'bg-amber-50 dark:bg-amber-950/20 border-amber-100 dark:border-amber-900/30 text-amber-800 dark:text-amber-200'
