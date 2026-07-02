@@ -16,6 +16,9 @@ import {
 import { DeckCard } from './components/DeckCard';
 import { FlashcardViewer } from './components/FlashcardViewer';
 import { DeckManager } from './components/DeckManager';
+import { ExamViewer } from './components/ExamViewer';
+// @ts-ignore
+import examRaw from '../public/exams/molecular-biology.json?raw';
 import { 
   Sparkles, 
   Layers, 
@@ -29,9 +32,17 @@ import {
   Github,
   Award,
   Sun,
-  Moon
+  Moon,
+  ClipboardList
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+
+// Load exam data
+const examsData: any[] = (() => {
+  try {
+    return [JSON.parse(examRaw)];
+  } catch { return []; }
+})();
 
 export default function App() {
   // Load initial Dark Mode preference
@@ -51,6 +62,7 @@ export default function App() {
   const [editingDeckId, setEditingDeckId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('全部');
+  const [activeExamId, setActiveExamId] = useState<string | null>(null);
 
   // Sync dark mode state with document class and localStorage
   useEffect(() => {
@@ -221,6 +233,7 @@ export default function App() {
             >
               <Plus size={16} /> 新建套牌
             </button>
+
             
             <button
               id="btn-reset-all"
@@ -237,7 +250,21 @@ export default function App() {
       {/* Main Content Area */}
       <main className="w-full max-w-[100rem] mx-auto px-2 sm:px-4 lg:px-6 mt-4 flex flex-col flex-1">
         <AnimatePresence mode="wait">
-          {!activeDeckId ? (
+          {activeExamId ? (
+            /* EXAM VIEW */
+            <motion.div
+              key="exam"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              className="flex flex-col flex-1 min-h-0"
+            >
+              <ExamViewer
+                exam={examsData.find(e => e.id === activeExamId)!}
+                onBack={() => setActiveExamId(null)}
+              />
+            </motion.div>
+          ) : !activeDeckId ? (
             /* DASHBOARD VIEW */
             <motion.div
               key="dashboard"
@@ -374,6 +401,58 @@ export default function App() {
                   )}
                 </div>
               )}
+
+              {/* Exam cards section */}
+              {examsData.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-black text-slate-600 dark:text-slate-400 mb-4 flex items-center gap-2">
+                    <ClipboardList size={16} className="text-emerald-500" />
+                    试卷
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {examsData.map(exam => {
+                      const colors = [
+                        { bg: 'bg-indigo-50 dark:bg-indigo-950/30', border: 'border-indigo-200 dark:border-indigo-900/40', text: 'text-indigo-700 dark:text-indigo-300', accent: 'from-indigo-400 to-blue-500' },
+                        { bg: 'bg-amber-50 dark:bg-amber-950/30', border: 'border-amber-200 dark:border-amber-900/40', text: 'text-amber-700 dark:text-amber-300', accent: 'from-amber-400 to-orange-500' },
+                        { bg: 'bg-rose-50 dark:bg-rose-950/30', border: 'border-rose-200 dark:border-rose-900/40', text: 'text-rose-700 dark:text-rose-300', accent: 'from-rose-400 to-pink-500' },
+                      ];
+                      const ci = exam.id.length % colors.length;
+                      const c = colors[ci];
+                      return (
+                        <motion.div
+                          key={exam.id}
+                          initial={{ opacity: 0, y: 12 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          whileHover={{ y: -4 }}
+                          onClick={() => setActiveExamId(exam.id)}
+                          className="bg-white dark:bg-[#12231a] rounded-[2rem] border border-emerald-100/40 dark:border-emerald-900/30 card-shadow p-6 flex flex-col justify-between relative overflow-hidden group transition-colors duration-300 cursor-pointer"
+                        >
+                          <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${c.accent}`} />
+                          <div>
+                            <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${c.bg} ${c.text} inline-block mb-3`}>
+                              {exam.category || '测试'}
+                            </span>
+                            <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors mb-2">
+                              {exam.title}
+                            </h3>
+                            <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                              {exam.description}
+                            </p>
+                          </div>
+                          <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-emerald-950/40 mt-auto">
+                            <span className="text-xs text-slate-400 dark:text-slate-500">
+                              {exam.sections?.reduce((s: number, sec: any) => s + sec.questions.length, 0)} 题 · {exam.totalScore} 分
+                            </span>
+                            <span className="text-xs font-bold text-white bg-gradient-to-r from-emerald-500 to-teal-600 px-3 py-1.5 rounded-xl shadow-xs">
+                              开始答题
+                            </span>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </motion.div>
           ) : (
             /* FLASHCARD SESSION VIEW */
@@ -402,11 +481,13 @@ export default function App() {
       </main>
 
       {/* Floating interactive support panel at bottom */}
-      <footer className="w-full max-w-[100rem] mx-auto px-2 sm:px-4 lg:px-6 mt-6 text-center">
-        <p className="text-[11px] text-slate-400/80 font-mono">
-          菘蓝的抽认卡 © 2026
-        </p>
-      </footer>
+      {!activeExamId && (
+        <footer className="w-full max-w-[100rem] mx-auto px-2 sm:px-4 lg:px-6 mt-6 text-center">
+          <p className="text-[11px] text-slate-400/80 font-mono">
+            菘蓝的抽认卡 © 2026
+          </p>
+        </footer>
+      )}
 
       {/* Custom Deck Creator / Editor overlay */}
       <AnimatePresence>

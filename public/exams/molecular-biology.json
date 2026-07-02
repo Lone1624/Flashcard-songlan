@@ -1,0 +1,444 @@
+{
+  "id": "mol-bio-exam-2024",
+  "title": "分子生物学综合测试卷",
+  "description": "涵盖转录、翻译、DNA复制与染色体结构的综合测试题库，包含详细解析和知识点总结。",
+  "category": "生物技术",
+  "createdAt": "2024-06-21",
+  "totalScore": 100,
+  "sections": [
+    {
+      "title": "转录、翻译章节选择题",
+      "type": "choice",
+      "startIndex": 1,
+      "endIndex": 20,
+      "scorePerQuestion": 2,
+      "questions": [
+        {
+          "id": "choice-1",
+          "type": "choice",
+          "question": "原核生物RNA聚合酶全酶中，参与识别转录起始信号的因子是（）。",
+          "options": ["α", "β", "β'", "σ"],
+          "answer": 3,
+          "explanation": "原核生物RNA聚合酶全酶的组成为 α₂ββ'σ。其中核心酶（α₂ββ'）负责催化RNA链的延伸，而 σ 因子专门负责特异性识别启动子（转录起始信号）并协助全酶定位，随后在转录延伸开始后脱落。"
+        },
+        {
+          "id": "choice-2",
+          "type": "choice",
+          "question": "核糖体的A位点是（）。",
+          "options": ["真核mRNA加工位点", "tRNA离开原核生物核糖体的位点", "新到来的AA-tRNA进入的位点", "起始AA-tRNA结合的位点"],
+          "answer": 2,
+          "explanation": "核糖体主要有三个tRNA结合位点：A位点（Aminoacyl site，氨酰tRNA位点）是新进的氨酰-tRNA结合位点；P位点（Peptidyl site，肽酰tRNA位点）是结合延伸中肽链或起始氨酰-tRNA的位点；E位点（Exit site，释放位点）是去酰基tRNA离开核糖体的位点。"
+        },
+        {
+          "id": "choice-3",
+          "type": "choice",
+          "question": "蛋白质的生物合成方向是（）",
+          "options": ["从C端→N端", "定点双向进行", "从N端、C端同时进行", "从N端→C端"],
+          "answer": 3,
+          "explanation": "核糖体在mRNA上沿 5' → 3' 方向移动，多肽链的合成方向则是从氨基端（N端）向羧基端（C端）延伸。"
+        },
+        {
+          "id": "choice-4",
+          "type": "choice",
+          "question": "真核生物mRNA的转录加工不包括（）",
+          "options": ["切除内含子，连接外显子", "5'加帽子结构", "3'端加多聚腺苷酸尾巴", "加CCA-OH"],
+          "answer": 3,
+          "explanation": "加CCA-OH是tRNA转录后加工的特征（所有tRNA的3'末端都必须是CCA-OH以结合氨基酸）。真核mRNA的加工包括5'加帽、3'加尾（Poly-A）以及切除内含子连接外显子的剪接。"
+        },
+        {
+          "id": "choice-5",
+          "type": "choice",
+          "question": "下列关于DNA复制与转录过程的描述，其中错误的是（）",
+          "options": ["体内只有模板链转录，而两条DNA链都能复制", "在两个过程中，新链合成方向均为5'至3'", "在两个过程中，新链合成均需要RNA引物", "在两个过程中，所需原料不同，催化酶也不同"],
+          "answer": 2,
+          "explanation": "DNA复制需要RNA引物提供 3'-OH 才能延伸，但转录（RNA合成）可以直接从头合成，不需要引物。"
+        },
+        {
+          "id": "choice-6",
+          "type": "choice",
+          "question": "真核生物mRNA的转录加工不包括（）",
+          "options": ["切除内含子，连接外显子", "5'加帽子结构", "3'端加多聚腺苷酸尾巴", "加CCA-OH"],
+          "answer": 3,
+          "explanation": "真核mRNA加工不包括3'末端加CCA-OH，这是tRNA的加工特征。"
+        },
+        {
+          "id": "choice-7",
+          "type": "choice",
+          "question": "真核生物RNA聚合酶Ⅰ催化生成的产物有（）",
+          "options": ["mRNA", "tRNA", "5S rRNA", "5.8S rRNA"],
+          "answer": 3,
+          "explanation": "真核生物RNA聚合酶有严格的分工：RNA聚合酶Ⅰ转录核糖体RNA前体（45S pre-rRNA），加工成 18S、5.8S 和 28S rRNA。RNA聚合酶Ⅱ转录 mRNA、snRNA 等。RNA聚合酶Ⅲ转录 tRNA、5S rRNA、U6 snRNA 等。"
+        },
+        {
+          "id": "choice-8",
+          "type": "choice",
+          "question": "真核生物中，编码蛋白质的基因通常是由哪种RNA聚合酶转录的（）",
+          "options": ["RNA聚合酶Ⅰ", "RNA聚合酶Ⅱ", "RNA聚合酶Ⅲ", "RNA聚合酶Ⅳ"],
+          "answer": 1,
+          "explanation": "真核生物中编码蛋白质的基因转录产物是mRNA，由RNA聚合酶Ⅱ负责催化转录。"
+        },
+        {
+          "id": "choice-9",
+          "type": "choice",
+          "question": "一个tRNA的反密码子是5'-CAU-3'，它识别的密码子为（）",
+          "options": ["5'-GUA-3'", "5'-ATG-3'", "5'-AUG-3'", "5'-GTA-3'"],
+          "answer": 2,
+          "explanation": "反密码子与密码子的配对是反向平行的。反密码子为 5'-CAU-3'，则与之配对的密码子应为 3'-GUA-5'，即写成 5'→3' 方向为 5'-AUG-3'。另外注意密码子存在于mRNA上，含有U而不是T。"
+        },
+        {
+          "id": "choice-10",
+          "type": "choice",
+          "question": "下列物质不是细菌核糖体的组成成分的是（）。",
+          "options": ["16S rRNA", "23S rRNA", "5.8S rRNA", "5S rRNA"],
+          "answer": 2,
+          "explanation": "原核生物（细菌）的核糖体为70S，由30S小亚基（含16S rRNA）和50S大亚基（含5S rRNA和23S rRNA）组成。5.8S rRNA是真核生物核糖体大亚基（60S）的组成成分。"
+        },
+        {
+          "id": "choice-11",
+          "type": "choice",
+          "question": "蛋白质合成过程中氨基酸的活化是由下列哪种物质提供能量（）",
+          "options": ["ATP", "GTP", "CTP", "UTP"],
+          "answer": 0,
+          "explanation": "氨基酸的活化是由氨酰-tRNA合成酶催化的，在此过程中氨基酸与ATP反应生成氨酰-AMP并释放 PPi，消耗的是ATP。而蛋白质延伸阶段（移位和进位）消耗的是GTP。"
+        },
+        {
+          "id": "choice-12",
+          "type": "choice",
+          "question": "成熟的真核生物mRNA的5'端具有（）",
+          "options": ["Poly(A)", "Poly(B)", "Poly(T)", "帽子结构"],
+          "answer": 3,
+          "explanation": "成熟真核mRNA的5'端具有7-甲基鸟苷（m⁷G）组成的帽子结构，3'端具有多聚腺苷酸（Poly(A)）尾巴。"
+        },
+        {
+          "id": "choice-13",
+          "type": "choice",
+          "question": "真核生物mRNA帽子结构与mRNA初始产物的第一个核苷酸是通过如下何种方式连接（）",
+          "options": ["5'-5'二磷酸连接", "5'-5'三磷酸连接", "3'-5'二磷酸连接", "3'-5'三磷酸连接"],
+          "answer": 1,
+          "explanation": "真核mRNA的5'帽子结构非常特殊，是由7-甲基鸟苷通过 5'-5'三磷酸键（5'-5' triphosphate linkage）连接到转录产物的第一个核苷酸的5'端。"
+        },
+        {
+          "id": "choice-14",
+          "type": "choice",
+          "question": "某些氨基酸有几个密码子同时编码，这种现象称为（）",
+          "options": ["密码子的方向性", "密码子的连续性", "密码子的通用性", "密码子的简并性"],
+          "answer": 3,
+          "explanation": "除了甲硫氨酸（AUG）和色氨酸（UGG）外，其余18种氨基酸都有两个或两个以上的密码子为其编码，环境或生理突变时可以起到容错作用，这种现象称为密码子的简并性（Degeneracy）。"
+        },
+        {
+          "id": "choice-15",
+          "type": "choice",
+          "question": "在蛋白质合成过程中，tRNA通过下列哪个结构区域携带氨基酸进入核糖体中（）。",
+          "options": ["5'端", "3'端", "反密码环", "二氢尿嘧啶环"],
+          "answer": 1,
+          "explanation": "tRNA的3'末端结构为 -CCA-OH，氨基酸是通过其羧基与tRNA 3'端腺苷酸的 2'-OH 或 3'-OH 形成酯键而被携带的。"
+        },
+        {
+          "id": "choice-16",
+          "type": "choice",
+          "question": "关于内含子的叙述，哪一条是正确的（）。",
+          "options": ["通过DNA重组被去掉", "通过RNA剪切被去掉", "在翻译过程中被核糖体滑过而避免翻译", "所指导合成的多肽序列在翻译后被切除"],
+          "answer": 1,
+          "explanation": "内含子是基因中不编码蛋白质的片段，它在DNA中正常存在并被一并转录进前体mRNA中，随后在RNA剪接（Splicing）阶段通过剪切和连接被去除，因此成熟的mRNA中不含内含子。"
+        },
+        {
+          "id": "choice-17",
+          "type": "choice",
+          "question": "在细菌的蛋白质翻译过程中EF-Ts因子的作用是（）。",
+          "options": ["将GDP转变为GTP", "促使AA-tRNA和核糖体的A位点结合", "将GTP转变为GDP", "将肽酰-tRNA从A位点移动到P位点"],
+          "answer": 0,
+          "explanation": "在伸长阶段，EF-Tu 携带 AA-tRNA 进入A位点并水解GTP，生成 EF-Tu-GDP。随后，EF-Ts（鸟苷酸交换因子）与 EF-Tu-GDP 结合，促使 GDP 释放并换上新的 GTP，使 EF-Tu-GTP 再生，继续参与下一轮循环。"
+        },
+        {
+          "id": "choice-18",
+          "type": "choice",
+          "question": "核酸分子中储存、传递遗传信息的关键部分是（）。",
+          "options": ["核苷", "磷酸", "戊糖", "碱基序列"],
+          "answer": 3,
+          "explanation": "核酸（DNA/RNA）的骨架是交替的磷酸和戊糖，其特异性和遗传信息蕴含在4种含氮碱基的特定排列顺序（碱基序列）中。"
+        },
+        {
+          "id": "choice-19",
+          "type": "choice",
+          "question": "下列哪种不是原核生物核糖体的组成部分（）",
+          "options": ["5S", "5.8S", "16S", "23S"],
+          "answer": 1,
+          "explanation": "原核生物包含 5S、16S 和 23S rRNA。5.8S rRNA 只存在于真核生物核糖体大亚基中。"
+        },
+        {
+          "id": "choice-20",
+          "type": "choice",
+          "question": "原核生物基因启动子中-10区与-35区的最佳距离是（）。",
+          "options": ["＜15bp", "16-19bp", "20bp", "＞20bp"],
+          "answer": 1,
+          "explanation": "大肠杆菌典型的启动子包含-35区（TTGACA）和-10区（TATAAT）。这两个核心保守区之间的间距（Spacer）对转录效率至关重要，最佳距离通常为 17±1 bp，即 16-19 bp。"
+        }
+      ]
+    },
+    {
+      "title": "转录、翻译章节判断题",
+      "type": "judge",
+      "startIndex": 1,
+      "endIndex": 10,
+      "scorePerQuestion": 2,
+      "questions": [
+        {
+          "id": "judge-1",
+          "type": "judge",
+          "question": "肽链从核糖体P位的肽酰-tRNA转移至A位的氨酰-tRNA，导致肽链延伸。（）",
+          "answer": true,
+          "explanation": "在转肽酶催化下，P位点上肽酰-tRNA的肽链被转移到A位点的新进氨酰-tRNA的氨基上，形成新的肽键，A位点tRNA从而变成肽酰-tRNA，肽链延长一个氨基酸。"
+        },
+        {
+          "id": "judge-2",
+          "type": "judge",
+          "question": "转录过程中RNA聚合酶需要引物。（）",
+          "answer": false,
+          "explanation": "RNA聚合酶能够催化游离的核苷三磷酸（NTP）从头合成RNA链，不需要引物。"
+        },
+        {
+          "id": "judge-3",
+          "type": "judge",
+          "question": "真核生物的RNA聚合酶不能直接识别基因的启动子区，需要在转录调控因子的帮助下，才能结合到靶基因的启动子上并解开DNA双链。（）",
+          "answer": true,
+          "explanation": "与原核生物不同，真核生物的RNA聚合酶自身无法直接特异性结合启动子。它们必须依赖于普通转录因子（GTFs，如TFIID、TFIIB等）先在启动子区组装成前起始复合物（PIC），才能招募RNA聚合酶进行转录。"
+        },
+        {
+          "id": "judge-4",
+          "type": "judge",
+          "question": "原核生物的mRNA通常是单顺反子，并且通常是边转录边翻译。（）",
+          "answer": false,
+          "explanation": "原核生物的mRNA通常是多顺反子（Polycistronic，一个mRNA包含多个基因的编码信息）；而真核生物主要为单顺反子。后半句\"边转录边翻译\"由于原核生物没有核膜限制，是正确的，但前半句错误导致整题错误。"
+        },
+        {
+          "id": "judge-5",
+          "type": "judge",
+          "question": "核酶主要是指细胞核中的酶类。（）",
+          "answer": false,
+          "explanation": "核酶（Ribozyme）是指具有催化功能的RNA分子，而不是特指\"细胞核中的酶\"。"
+        },
+        {
+          "id": "judge-6",
+          "type": "judge",
+          "question": "在真核细胞中肽链合成终止的原因是已达到mRNA分子的尽头。（）",
+          "answer": false,
+          "explanation": "翻译终止是因为核糖体遇到了mRNA上的终止密码子（UAA、UAG、UGA），此时释放因子（RF）识别并结合到A位，催化肽链的水解释放，而非因为到达mRNA尽头（成熟mRNA在终止密码子后还有3' UTR和Poly-A尾巴）。"
+        },
+        {
+          "id": "judge-7",
+          "type": "judge",
+          "question": "真核生物翻译的起始氨基酸是甲酰甲硫氨酸。（）",
+          "answer": false,
+          "explanation": "原核生物翻译起始使用的是甲酰甲硫氨酸（fMet）；而真核生物翻译起始使用的是普通的甲硫氨酸（Met）。"
+        },
+        {
+          "id": "judge-8",
+          "type": "judge",
+          "question": "在蛋白质翻译过程中，核糖体沿mRNA的5'到3'方向相对移动。（）",
+          "answer": true,
+          "explanation": "核糖体阅读mRNA的密码子方向是严格的由 5' 端向 3' 端移动。"
+        },
+        {
+          "id": "judge-9",
+          "type": "judge",
+          "question": "在前体mRNA上加多腺苷酸尾巴涉及两步转酯反应。（）",
+          "answer": false,
+          "explanation": "前体mRNA加多聚腺苷酸（Poly-A）尾巴是由内切酶在多聚腺苷酸信号下游剪切，然后由多聚腺苷酸聚合酶（PAP）利用ATP逐步添加腺苷酸。涉及两步转酯反应的是RNA剪接（Splicing）过程。"
+        },
+        {
+          "id": "judge-10",
+          "type": "judge",
+          "question": "UAA通常是蛋白质合成的起始密码子。（）",
+          "answer": false,
+          "explanation": "UAA 是蛋白质合成的终止密码子。通用的起始密码子是 AUG。"
+        }
+      ]
+    },
+    {
+      "title": "DNA复制、染色体结构选择题",
+      "type": "choice",
+      "startIndex": 1,
+      "endIndex": 14,
+      "scorePerQuestion": 2,
+      "questions": [
+        {
+          "id": "dna-choice-1",
+          "type": "choice",
+          "question": "核小体中的组蛋白八聚体核心不包括（）。",
+          "options": ["H2A", "H1", "H3", "H4"],
+          "answer": 1,
+          "explanation": "核小体的核心八聚体是由 H2A、H2B、H3、H4 各两个单体组成的。H1 属于连接组蛋白（Linker histone），负责结合在核小体核心颗粒外侧的连接DNA上，不属于核心八聚体。"
+        },
+        {
+          "id": "dna-choice-2",
+          "type": "choice",
+          "question": "一个核小体结合的DNA片段长度约为（）。",
+          "options": ["200bp", "55bp", "146bp", "166bp"],
+          "answer": 0,
+          "explanation": "一个完整的核小体单位（包含核心颗粒和连接DNA）对应的DNA片段总长约为 200 bp。其中缠绕在核心八聚体上的DNA约为 146-147 bp。"
+        },
+        {
+          "id": "dna-choice-3",
+          "type": "choice",
+          "question": "下列关于大肠杆菌DNA复制的说法不正确的有（）。",
+          "options": ["需要4种dNMP的参与", "需要DNA聚合酶Ⅰ", "需要DNA连接酶的作用", "涉及RNA引物的形成"],
+          "answer": 0,
+          "explanation": "DNA复制所需的原料是4种脱氧核苷三磷酸（dNTP：dATP、dTTP、dGTP、dCTP），而不是脱氧核苷一磷酸（dNMP）。"
+        },
+        {
+          "id": "dna-choice-4",
+          "type": "choice",
+          "question": "下列哪一项描述对于DNA聚合酶Ⅲ是错误的？（）",
+          "options": ["仅催化脱氧核糖核苷酸连接到已合成DNA的5'羟基末端", "需四种不同的5'-三磷酸脱氧核苷", "可催化脱氧核糖核苷酸连接到RNA引物的3'末端上", "催化脱氧核苷酸连接到引物链上"],
+          "answer": 0,
+          "explanation": "DNA聚合酶的合成方向必须是 5' → 3'，这意味着它是将新进的脱氧核苷酸连接到已有链的 3'-OH（3'羟基末端）上，而不是5'羟基末端。"
+        },
+        {
+          "id": "dna-choice-5",
+          "type": "choice",
+          "question": "模版DNA链序列为5'-ATAGC-3'时，合成的子代DNA的序列为（）。",
+          "options": ["5'-GCATA-3'", "5'-GATAT-3'", "5'-GCTAT-3'", "5'-GCTAG-3'"],
+          "answer": 2,
+          "explanation": "根据碱基互补配对原则（A-T, G-C）和反向平行原则：模板链 5'-ATAGC-3'，子代链 3'-TATCG-5'，反转 5'→3' 为 5'-GCTAT-3'。"
+        },
+        {
+          "id": "dna-choice-6",
+          "type": "choice",
+          "question": "关于DNA复制描述错误的是（）。",
+          "options": ["半保留复制", "多以复制叉形式进行", "不需要引物", "亲代两条链都可以作为模板"],
+          "answer": 2,
+          "explanation": "DNA复制过程中，DNA聚合酶无法从头起始合成，必须由引发酶（Primase）先合成一段 RNA引物，然后DNA聚合酶才能延伸。"
+        },
+        {
+          "id": "dna-choice-7",
+          "type": "choice",
+          "question": "真核生物DNA复制叉前进的速度与原核生物相比（）。",
+          "options": ["基本相同", "慢得多", "略快", "快得多"],
+          "answer": 1,
+          "explanation": "原核生物DNA复制叉移动速度非常快（大肠杆菌约为 1000 bp/s）；真核生物由于染色质结构复杂（需解聚和重新组装核小体），复制叉前进速度慢得多（约为 50 bp/s）。"
+        },
+        {
+          "id": "dna-choice-8",
+          "type": "choice",
+          "question": "大肠杆菌DNA复制过程中负责切除RNA引物的酶是（）。",
+          "options": ["DNA polymerase Ⅱ", "DNA polymerase Ⅳ", "DNA polymerase Ⅲ", "DNA polymerase Ⅰ"],
+          "answer": 3,
+          "explanation": "大肠杆菌 DNA聚合酶Ⅰ（DNA pol Ⅰ）具有 5'→3' 外切酶活性，它负责切除RNA引物，并利用其聚合活性填补留下来的单链间隙。"
+        },
+        {
+          "id": "dna-choice-9",
+          "type": "choice",
+          "question": "生物体中DNA的双螺旋结构主要为（）。",
+          "options": ["Z型", "C型", "A型", "B型"],
+          "answer": 3,
+          "explanation": "在生理条件下，生物体内绝大多数双链DNA展现的是沃森和克里克提出的右手双螺旋 B型 构象。"
+        },
+        {
+          "id": "dna-choice-10",
+          "type": "choice",
+          "question": "关于DNA复制的叙述，下列哪项是错误的（）。",
+          "options": ["为半不连续复制", "为不对称复制", "需要引物", "为半保留复制"],
+          "answer": 1,
+          "explanation": "DNA复制的基本特征包括：半保留复制、半不连续复制、需要RNA引物。\"不对称复制\"多用于描述某些病毒或特殊转录，不属于DNA双螺旋标准复制的通用核心特征。"
+        },
+        {
+          "id": "dna-choice-11",
+          "type": "choice",
+          "question": "线性DNA分子的复制方向有（）。",
+          "options": ["单一起点单向", "以上都是", "单一起点双向", "多起始点双向"],
+          "answer": 3,
+          "explanation": "线性DNA主要存在于真核生物中。真核生物染色体基因组巨大，为了高效率完成复制，采用的是多起始点、双向复制的机制。"
+        },
+        {
+          "id": "dna-choice-12",
+          "type": "choice",
+          "question": "复制是从DNA分子上的特定位置开始的，这一位置被称为（）。",
+          "options": ["复制单元", "复制起点", "复制叉", "复制子"],
+          "answer": 1,
+          "explanation": "DNA复制起始的特异性DNA序列被称为复制起点（Origin of replication，常写作 ori）。"
+        },
+        {
+          "id": "dna-choice-13",
+          "type": "choice-multi",
+          "question": "DNA的复制过程包括（）。",
+          "options": ["DNA复制的终止", "DNA复制的引发", "DNA复制的延伸", "双螺旋的解链"],
+          "answer": [0, 1, 2, 3],
+          "explanation": "完整的DNA复制包含了：起始阶段（双螺旋解链、引物引发）、延伸阶段、以及最后的终止阶段。"
+        },
+        {
+          "id": "dna-choice-14",
+          "type": "choice",
+          "question": "DNA复制时不起作用的是（）。",
+          "options": ["DNaseⅠ", "DNA聚合酶", "解链酶", "DNA连接酶"],
+          "answer": 0,
+          "explanation": "DNase Ⅰ 是一种内切脱氧核糖核酸酶，其功能是降解/切断双链或单链DNA，在正常的DNA复制过程中不起催化作用。"
+        }
+      ]
+    },
+    {
+      "title": "DNA复制、染色体结构判断题",
+      "type": "judge",
+      "startIndex": 1,
+      "endIndex": 8,
+      "scorePerQuestion": 2,
+      "questions": [
+        {
+          "id": "dna-judge-1",
+          "type": "judge",
+          "question": "细菌的染色体基因组通常仅有一条环状DNA分子组成。（）",
+          "answer": true,
+          "explanation": "绝大多数细菌（如大肠杆菌）的染色体基因组是由单一的正超级螺旋双链环状DNA分子构成。"
+        },
+        {
+          "id": "dna-judge-2",
+          "type": "judge",
+          "question": "高等真核生物大部分DNA是不编码蛋白质的。（）",
+          "answer": true,
+          "explanation": "在高等真核生物（如人类）的基因组中，编码蛋白质的非重复外显子序列仅占总基因组的 1.5% 左右，绝大部分区域为非编码序列。"
+        },
+        {
+          "id": "dna-judge-3",
+          "type": "judge",
+          "question": "染色质和染色体的差别主要在包装程度上，其化学组成完全相同。（）",
+          "answer": true,
+          "explanation": "染色质与染色体是同一种物质在细胞周期不同阶段的不同形态表现。其化学成分均主要由DNA和组蛋白构成。"
+        },
+        {
+          "id": "dna-judge-4",
+          "type": "judge",
+          "question": "依赖于DNA的DNA聚合酶所进行的DNA复制要求有作为一个引物的游离3'-OH的存在。游离的3'-OH可以是RNA引物提供，也可以是已合成的DNA上的。（）",
+          "answer": true,
+          "explanation": "DNA聚合酶必须在已有链的 3'-OH 末端添加核苷酸。在正常复制起始时由RNA引物提供 3'-OH，而在DNA修复、同源重组或者冈崎片段填补空隙时则由前面已合成的DNA片段的 3'-OH 提供。"
+        },
+        {
+          "id": "dna-judge-5",
+          "type": "judge",
+          "question": "绝大部分原核生物基因组由单一的DNA分子组成，一般是环状。（）",
+          "answer": true,
+          "explanation": "原核生物如细菌、古菌的基因组基本都是单拷贝的、双链环状DNA分子。"
+        },
+        {
+          "id": "dna-judge-6",
+          "type": "judge",
+          "question": "DNA的一级结构，就是指4种脱氧核糖核苷酸的连接及其排列顺序，表示了该DNA分子的化学构成。（）",
+          "answer": true,
+          "explanation": "核酸的一级结构定义就是指多核苷酸链中脱氧核糖核苷酸（或碱基）的排列顺序以及它们之间的连接方式（3',5'-磷酸二酯键）。"
+        },
+        {
+          "id": "dna-judge-7",
+          "type": "judge",
+          "question": "DNA的半保留复制是指双链一条来自父本一条来自母本。（）",
+          "answer": false,
+          "explanation": "DNA的半保留复制（Semiconservative replication）指的是：复制完成后，子代DNA双螺旋分子中，一条链来自亲代DNA（模板链），另一条链是新合成的子链。"
+        },
+        {
+          "id": "dna-judge-8",
+          "type": "judge",
+          "question": "引发酶合成一段RNA引物。（）",
+          "answer": true,
+          "explanation": "引发酶（Primase）本质上是一种依赖DNA的RNA聚合酶，其专门负责在复制起始位点和后随链冈崎片段的起点合成一段短的（通常10-12个核苷酸）RNA引物。"
+        }
+      ]
+    }
+  ]
+}
