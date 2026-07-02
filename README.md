@@ -2,9 +2,9 @@
 <img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
 </div>
 
-# Run and deploy your AI Studio app
+# 菘蓝的抽认卡
 
-This contains everything you need to run your app locally.
+基于 Vite + React 的纯前端抽认卡与试卷系统。
 
 View your app in AI Studio: https://ai.studio/apps/5fb8269a-07f8-4a28-b450-8c57974082eb
 
